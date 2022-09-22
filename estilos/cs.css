@@ -1,0 +1,42 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    min-height: 90px;
+    background-color: rgb(255, 145, 0);
+    margin: 0;
+    padding: 10px;
+    align-items: center;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logoDunk {
+    height: 90px;
+    margin-right: 10px;
+}
+
+nav a {
+    font-weight: 600;
+    padding-right: 10px;
+}
+nav a:hover {
+    color: yellow;
+}
+
+@media (max-width: 700px){
+    header {
+        flex-direction: column;
+    }
+
+    nav {
+        padding: 10px 0px;
+    }
+}
