@@ -24,3 +24,4 @@ const productos = [
   
     contenedor.append(div);
   });
+
