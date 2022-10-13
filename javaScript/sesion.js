@@ -1,17 +1,31 @@
-let usuario;
-let usuarioStorage = sessionStorage.getItem("usuario");
 
-if(usuarioStorage){
-    usuario = usuarioStorage;
-
-    let mensaje = `Bienvenido ${usuario}`;
-    alert(mensaje);
-}else{
-    usuario = prompt("Ingrese su usuario");
-    sessionStorage.setItem("usuario", usuario);
-}
+iniciarSesion.addEventListener("click", ()=>{
+    Swal.fire({
+        title: 'Ingrese su usuario',
+        input: 'text',
+       
+        showCancelButton: true,
+        confirmButtonText: 'Aceptar',
+        
+       
+        
+      }).then((result) => {
+        if (result.isConfirmed) {
+          Swal.fire({
+            title: `${result.value}`,
+            
+          });
+        }
+      });
+});
 
 cerrarSesion.addEventListener("click",()=>{
     sessionStorage.clear();
-    alert("Sesión cerrada ¡Gracias por su visita!");
+    Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'Sesión finalizada ¡Gracias por su visita!',
+        showConfirmButton: false,
+        timer: 1500
+      })
 });
